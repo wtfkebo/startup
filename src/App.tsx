@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import ProjectDetail from './pages/ProjectDetail';
 import Services from './pages/Services';
 import Chatbot from './components/Chatbot';
+import CustomCursor from './components/CustomCursor';
+import BackToTop from './components/BackToTop';
 
 function ScrollProgress() {
   const { scrollYProgress } = useScroll();
@@ -49,6 +51,7 @@ export default function App() {
     <Router>
       <ScrollProgress />
       <ScrollToTop />
+      <CustomCursor />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <div className="flex-grow">
@@ -59,6 +62,7 @@ export default function App() {
           </Routes>
         </div>
         <Chatbot />
+        <BackToTop />
         <Footer />
       </div>
     </Router>

@@ -193,6 +193,26 @@ export default function ProjectDetail() {
         </div>
       </header>
 
+      {/* Tech Stack Floating Bar */}
+      <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-[60] hidden md:block">
+        <div className="glass px-8 py-4 rounded-2xl flex items-center gap-8 shadow-2xl border-white/10">
+          <div className="flex flex-col">
+            <span className="text-[10px] uppercase tracking-widest opacity-50 font-bold">Client</span>
+            <span className="text-sm font-medium">{demo.name}</span>
+          </div>
+          <div className="w-px h-8 bg-white/10"></div>
+          <div className="flex flex-col">
+            <span className="text-[10px] uppercase tracking-widest opacity-50 font-bold">Services</span>
+            <span className="text-sm font-medium">Web Design, Branding</span>
+          </div>
+          <div className="w-px h-8 bg-white/10"></div>
+          <div className="flex flex-col">
+            <span className="text-[10px] uppercase tracking-widest opacity-50 font-bold">Year</span>
+            <span className="text-sm font-medium">2024</span>
+          </div>
+        </div>
+      </div>
+
       {/* Demo Hero */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <img 

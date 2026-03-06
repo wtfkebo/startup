@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle2, MessageSquare, Phone, Mail, Globe, Layout, RefreshCw } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Reveal from '../components/Reveal';
 
 const projects = [
   {
@@ -141,15 +142,17 @@ export default function Home() {
       {/* Portfolio Section */}
       <section id="work" className="section-padding bg-white dark:bg-dark-surface">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div>
-              <span className="text-studio-gold font-medium uppercase tracking-widest text-xs mb-4 block">Our Portfolio</span>
-              <h2 className="text-4xl md:text-5xl font-serif text-studio-ink dark:text-white">Selected Work</h2>
+          <Reveal width="100%">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+              <div>
+                <span className="text-studio-gold font-medium uppercase tracking-widest text-xs mb-4 block">Our Portfolio</span>
+                <h2 className="text-4xl md:text-5xl font-serif text-studio-ink dark:text-white">Selected Work</h2>
+              </div>
+              <p className="text-studio-ink/60 dark:text-white/60 max-w-md">
+                A collection of digital experiences we've crafted for businesses that care about their brand.
+              </p>
             </div>
-            <p className="text-studio-ink/60 dark:text-white/60 max-w-md">
-              A collection of digital experiences we've crafted for businesses that care about their brand.
-            </p>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects.map((project, idx) => (
@@ -194,13 +197,15 @@ export default function Home() {
       {/* Services Section */}
       <section id="services" className="section-padding bg-studio-bg dark:bg-dark-bg">
         <div className="container-custom">
-          <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-studio-gold font-medium uppercase tracking-widest text-xs mb-4 block">Services</span>
-            <h2 className="text-4xl md:text-5xl font-serif mb-6 dark:text-white">What We Offer</h2>
-            <p className="text-studio-ink/60 dark:text-white/60">
-              We provide comprehensive digital solutions to help your business thrive in the modern landscape.
-            </p>
-          </div>
+          <Reveal width="100%">
+            <div className="text-center max-w-2xl mx-auto mb-20">
+              <span className="text-studio-gold font-medium uppercase tracking-widest text-xs mb-4 block">Services</span>
+              <h2 className="text-4xl md:text-5xl font-serif mb-6 dark:text-white">What We Offer</h2>
+              <p className="text-studio-ink/60 dark:text-white/60">
+                We provide comprehensive digital solutions to help your business thrive in the modern landscape.
+              </p>
+            </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, idx) => (

@@ -16,8 +16,21 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-studio-bg text-studio-ink font-sans antialiased transition-colors duration-300;
+  }
+  
+  @media (pointer: fine) {
+    body {
+      cursor: none;
+    }
+    a, button, [role="button"] {
+      cursor: none;
+    }
   }
   
   .dark body {
@@ -29,7 +42,7 @@
   }
 }
 
-.glass {
+@utility glass {
   @apply bg-white/70 backdrop-blur-md border border-white/20;
 }
 
@@ -55,7 +68,7 @@
 }
 
 .chat-window {
-  @apply w-80 sm:w-96 h-[500px] glass rounded-3xl shadow-2xl overflow-hidden flex flex-col mb-4;
+  @apply w-80 sm:w-96 h-[500px] bg-white/70 backdrop-blur-md border border-white/20 rounded-3xl shadow-2xl overflow-hidden flex flex-col mb-4;
 }
 
 .dark .chat-window {
