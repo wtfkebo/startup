@@ -93,7 +93,7 @@ export default function Services() {
               className={`relative p-10 rounded-[2.5rem] border transition-all duration-500 ${
                 tier.popular 
                   ? 'bg-studio-ink text-white border-studio-ink shadow-2xl scale-105 z-10 dark:bg-studio-gold dark:text-studio-ink dark:border-studio-gold' 
-                  : 'bg-white text-studio-ink border-studio-ink/5 hover:shadow-xl dark:bg-dark-surface dark:text-white dark:border-white/5'
+                  : 'bg-white text-studio-ink border-studio-ink/5 dark:bg-dark-surface dark:text-white dark:border-white/5'
               }`}
             >
               {tier.popular && (

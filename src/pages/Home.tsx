@@ -114,7 +114,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.2 }}
             className="relative hidden lg:block"
           >
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700">
+            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-700">
               <img 
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" 
                 alt="Web Design Studio"
@@ -169,7 +169,7 @@ export default function Home() {
                     <img 
                       src={project.image} 
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-0 bg-studio-ink/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -215,7 +215,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-white dark:bg-dark-surface p-10 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-studio-ink/5 dark:border-white/5"
+                className="bg-white dark:bg-dark-surface p-10 rounded-3xl shadow-sm transition-all duration-300 border border-studio-ink/5 dark:border-white/5"
               >
                 <div className="w-14 h-14 bg-studio-gold/10 rounded-2xl flex items-center justify-center mb-8 text-studio-gold">
                   <service.icon size={28} />
