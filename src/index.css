@@ -9,11 +9,19 @@
   --color-studio-ink: #1A1A1A;
   --color-studio-gold: #C7A46C;
   --color-studio-gold-light: #D4B98E;
+  
+  --color-dark-bg: #0F0F0F;
+  --color-dark-surface: #1A1A1A;
+  --color-dark-ink: #F7F6F3;
 }
 
 @layer base {
   body {
-    @apply bg-studio-bg text-studio-ink font-sans antialiased;
+    @apply bg-studio-bg text-studio-ink font-sans antialiased transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-dark-bg text-dark-ink;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -23,6 +31,10 @@
 
 .glass {
   @apply bg-white/70 backdrop-blur-md border border-white/20;
+}
+
+.dark .glass {
+  @apply bg-dark-surface/70 border-white/5;
 }
 
 .text-balance {
@@ -35,4 +47,49 @@
 
 .container-custom {
   @apply max-w-[1200px] mx-auto px-6;
+}
+
+/* Chatbot Styles */
+.chatbot-container {
+  @apply fixed bottom-6 right-6 z-[100] flex flex-col items-end;
+}
+
+.chat-window {
+  @apply w-80 sm:w-96 h-[500px] glass rounded-3xl shadow-2xl overflow-hidden flex flex-col mb-4;
+}
+
+.dark .chat-window {
+  @apply bg-dark-surface border-white/10;
+}
+
+.chat-header {
+  @apply p-4 bg-studio-ink text-white flex justify-between items-center;
+}
+
+.chat-messages {
+  @apply flex-grow overflow-y-auto p-4 space-y-4;
+}
+
+.chat-input-area {
+  @apply p-4 border-t border-studio-ink/5 flex items-center gap-2;
+}
+
+.dark .chat-input-area {
+  @apply border-white/10;
+}
+
+.message-bubble {
+  @apply max-w-[80%] p-3 rounded-2xl text-sm;
+}
+
+.message-user {
+  @apply bg-studio-gold text-studio-ink self-end ml-auto rounded-tr-none;
+}
+
+.message-bot {
+  @apply bg-studio-ink/5 text-studio-ink self-start rounded-tl-none;
+}
+
+.dark .message-bot {
+  @apply bg-white/10 text-white;
 }

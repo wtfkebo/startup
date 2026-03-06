@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import ProjectDetail from './pages/ProjectDetail';
+import Services from './pages/Services';
+import Chatbot from './components/Chatbot';
 
 function ScrollProgress() {
   const { scrollYProgress } = useScroll();
@@ -53,8 +55,10 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/project/:id" element={<ProjectDetail />} />
+            <Route path="/services" element={<Services />} />
           </Routes>
         </div>
+        <Chatbot />
         <Footer />
       </div>
     </Router>
