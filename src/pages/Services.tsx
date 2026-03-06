@@ -60,7 +60,7 @@ export default function Services() {
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-studio-gold font-medium uppercase tracking-widest text-xs mb-4 block"
+            className="text-brand-primary font-semibold uppercase tracking-widest text-xs mb-4 block"
           >
             Pricing & Plans
           </motion.span>
@@ -68,9 +68,9 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-serif mb-8 dark:text-white"
+            className="text-5xl md:text-7xl font-display font-bold mb-8 dark:text-white"
           >
-            Invest in your <span className="italic text-studio-gold">Digital Future</span>
+            Invest in your <span className="text-gradient italic">Digital Future</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -92,26 +92,26 @@ export default function Services() {
               transition={{ delay: 0.1 * idx }}
               className={`relative p-10 rounded-[2.5rem] border transition-all duration-500 ${
                 tier.popular 
-                  ? 'bg-studio-ink text-white border-studio-ink shadow-2xl scale-105 z-10 dark:bg-studio-gold dark:text-studio-ink dark:border-studio-gold' 
+                  ? 'bg-brand-primary text-white border-brand-primary shadow-2xl scale-105 z-10' 
                   : 'bg-white text-studio-ink border-studio-ink/5 dark:bg-dark-surface dark:text-white dark:border-white/5'
               }`}
             >
               {tier.popular && (
-                <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-studio-gold text-studio-ink px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-1 dark:bg-studio-ink dark:text-studio-gold">
+                <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-brand-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-1">
                   <Star size={12} fill="currentColor" />
                   Most Popular
                 </div>
               )}
               
               <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-8 ${
-                tier.popular ? 'bg-white/10 text-studio-gold dark:bg-studio-ink/10 dark:text-studio-ink' : 'bg-studio-gold/10 text-studio-gold'
+                tier.popular ? 'bg-white/20 text-white' : 'bg-brand-primary/10 text-brand-primary'
               }`}>
                 <tier.icon size={28} />
               </div>
 
-              <h3 className="text-2xl font-serif mb-2">{tier.name}</h3>
+              <h3 className="text-2xl font-display font-bold mb-2">{tier.name}</h3>
               <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-4xl font-serif font-bold">${tier.price}</span>
+                <span className="text-4xl font-display font-bold">${tier.price}</span>
                 <span className="text-sm opacity-60">/ project</span>
               </div>
               
@@ -122,7 +122,7 @@ export default function Services() {
               <div className="space-y-4 mb-10">
                 {tier.features.map(feature => (
                   <div key={feature} className="flex items-center gap-3">
-                    <div className={`p-1 rounded-full ${tier.popular ? 'bg-studio-gold text-studio-ink dark:bg-studio-ink dark:text-studio-gold' : 'bg-studio-gold/20 text-studio-gold'}`}>
+                    <div className={`p-1 rounded-full ${tier.popular ? 'bg-white/20 text-white' : 'bg-brand-primary/10 text-brand-primary'}`}>
                       <Check size={12} strokeWidth={3} />
                     </div>
                     <span className="text-sm font-medium">{feature}</span>
@@ -132,8 +132,8 @@ export default function Services() {
 
               <button className={`w-full py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all ${
                 tier.popular 
-                  ? 'bg-studio-gold text-studio-ink hover:bg-white dark:bg-studio-ink dark:text-studio-gold dark:hover:bg-white' 
-                  : 'bg-studio-ink text-white hover:bg-studio-gold hover:text-studio-ink dark:bg-studio-gold dark:text-studio-ink dark:hover:bg-white'
+                  ? 'bg-white text-brand-primary hover:bg-brand-secondary hover:text-white' 
+                  : 'bg-brand-primary text-white hover:bg-brand-secondary'
               }`}>
                 Get Started
                 <ArrowRight size={18} />
@@ -142,13 +142,13 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="mt-32 p-12 rounded-[3rem] bg-studio-gold/5 border border-studio-gold/10 dark:bg-white/5 dark:border-white/5 text-center">
-          <h2 className="text-3xl font-serif mb-6 dark:text-white">Need a custom solution?</h2>
+        <div className="mt-32 p-12 rounded-[3rem] bg-brand-primary/5 border border-brand-primary/10 dark:bg-white/5 dark:border-white/5 text-center">
+          <h2 className="text-3xl font-display font-bold mb-6 dark:text-white">Need a custom solution?</h2>
           <p className="text-studio-ink/60 dark:text-white/60 mb-8 max-w-xl mx-auto">
             We understand that some projects don't fit into a box. Contact us for a 
             bespoke quote tailored to your unique requirements.
           </p>
-          <button className="bg-studio-ink text-white px-10 py-4 rounded-full font-bold hover:bg-studio-gold hover:text-studio-ink transition-all dark:bg-studio-gold dark:text-studio-ink">
+          <button className="btn-primary">
             Contact for Custom Quote
           </button>
         </div>

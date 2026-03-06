@@ -1,18 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Playfair Display", serif;
+  --font-display: "Outfit", sans-serif;
   
-  --color-studio-bg: #F7F6F3;
-  --color-studio-ink: #1A1A1A;
-  --color-studio-gold: #C7A46C;
-  --color-studio-gold-light: #D4B98E;
+  --color-brand-primary: #6366f1; /* Indigo 500 */
+  --color-brand-secondary: #8b5cf6; /* Violet 500 */
+  --color-brand-accent: #10b981; /* Emerald 500 */
   
-  --color-dark-bg: #0F0F0F;
-  --color-dark-surface: #1A1A1A;
-  --color-dark-ink: #F7F6F3;
+  --color-studio-bg: #ffffff;
+  --color-studio-ink: #0f172a; /* Slate 900 */
+  
+  --color-dark-bg: #020617; /* Slate 950 */
+  --color-dark-surface: #0f172a; /* Slate 900 */
+  --color-dark-ink: #f8fafc; /* Slate 50 */
 }
 
 @layer base {
@@ -24,23 +26,26 @@
     @apply bg-studio-bg text-studio-ink font-sans antialiased transition-colors duration-300 dark:bg-dark-bg dark:text-dark-ink;
   }
   
-  @media (pointer: fine) {
-    body {
-      cursor: none;
-    }
-    a, button, [role="button"] {
-      cursor: none;
-    }
-  }
-  
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    @apply font-display tracking-tight;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/70 backdrop-blur-md border border-white/20 dark:bg-dark-surface/70 dark:border-white/5;
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 dark:bg-dark-surface/70 dark:border-white/5;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-primary to-brand-secondary;
+  }
+  
+  .btn-primary {
+    @apply px-8 py-4 bg-brand-primary text-white rounded-2xl font-semibold hover:bg-brand-secondary transition-all duration-300 shadow-lg shadow-brand-primary/20 hover:shadow-brand-secondary/30 hover:-translate-y-1;
+  }
+  
+  .btn-secondary {
+    @apply px-8 py-4 bg-white text-brand-primary border border-brand-primary/10 rounded-2xl font-semibold hover:bg-brand-primary/5 transition-all duration-300 dark:bg-dark-surface dark:text-white dark:border-white/10 dark:hover:bg-white/5;
   }
 }
 
@@ -49,11 +54,11 @@
 }
 
 .section-padding {
-  @apply py-20 md:py-32;
+  @apply py-24 md:py-32;
 }
 
 .container-custom {
-  @apply max-w-[1200px] mx-auto px-6;
+  @apply max-w-7xl mx-auto px-6;
 }
 
 /* Chatbot Styles */
@@ -70,7 +75,7 @@
 }
 
 .chat-header {
-  @apply p-4 bg-studio-ink text-white flex justify-between items-center;
+  @apply p-4 bg-brand-primary text-white flex justify-between items-center;
 }
 
 .chat-messages {
@@ -90,11 +95,11 @@
 }
 
 .message-user {
-  @apply bg-studio-gold text-studio-ink self-end ml-auto rounded-tr-none;
+  @apply bg-brand-primary text-white self-end ml-auto rounded-tr-none shadow-sm;
 }
 
 .message-bot {
-  @apply bg-studio-ink/5 text-studio-ink self-start rounded-tl-none;
+  @apply bg-brand-secondary/10 text-studio-ink self-start rounded-tl-none;
 }
 
 .dark .message-bot {

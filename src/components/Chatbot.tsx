@@ -71,10 +71,10 @@ export default function Chatbot() {
           >
             <div className="chat-header">
               <div className="flex items-center gap-2">
-                <Bot size={20} className="text-studio-gold" />
-                <span className="font-serif font-bold">Lumina Assistant</span>
+                <Bot size={20} className="text-white" />
+                <span className="font-display font-bold">Lumina Assistant</span>
               </div>
-              <button onClick={() => setIsOpen(false)} className="hover:text-studio-gold transition-colors">
+              <button onClick={() => setIsOpen(false)} className="hover:text-white/70 transition-colors">
                 <X size={20} />
               </button>
             </div>
@@ -100,12 +100,12 @@ export default function Chatbot() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSend()}
                 placeholder="Type a message..."
-                className="flex-grow bg-studio-ink/5 dark:bg-white/5 border-none rounded-xl px-4 py-2 text-sm focus:ring-1 focus:ring-studio-gold outline-none"
+                className="flex-grow bg-studio-ink/5 dark:bg-white/5 border-none rounded-xl px-4 py-2 text-sm focus:ring-1 focus:ring-brand-primary outline-none"
               />
               <button 
                 onClick={handleSend}
                 disabled={isLoading}
-                className="p-2 bg-studio-ink text-white rounded-xl hover:bg-studio-gold transition-colors disabled:opacity-50"
+                className="p-2 bg-brand-primary text-white rounded-xl hover:bg-brand-secondary transition-colors disabled:opacity-50"
               >
                 <Send size={18} />
               </button>
@@ -118,7 +118,7 @@ export default function Chatbot() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-studio-ink text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-studio-gold transition-colors"
+        className="w-14 h-14 bg-brand-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-brand-secondary transition-colors"
       >
         {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
       </motion.button>

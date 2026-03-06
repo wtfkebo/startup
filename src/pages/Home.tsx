@@ -89,19 +89,19 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-serif leading-[1.1] mb-6 text-studio-ink dark:text-white">
-              Premium Websites for <span className="italic text-studio-gold">Modern</span> Local Businesses
+            <h1 className="text-5xl md:text-7xl font-display leading-[1.1] mb-6 text-studio-ink dark:text-white">
+              Premium Websites for <span className="text-gradient italic">Modern</span> Local Businesses
             </h1>
             <p className="text-lg md:text-xl text-studio-ink/70 dark:text-white/70 mb-10 max-w-lg leading-relaxed">
               We design clean, fast, and professional websites that help local businesses 
               get discovered and convert customers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#work" className="bg-studio-ink dark:bg-studio-gold dark:text-studio-ink text-white px-8 py-4 rounded-full font-medium flex items-center justify-center hover:bg-studio-gold dark:hover:bg-white transition-all duration-300 group">
+              <a href="#work" className="btn-primary flex items-center justify-center group">
                 View Our Work
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
               </a>
-              <a href="#contact" className="border border-studio-ink/20 dark:border-white/20 dark:text-white px-8 py-4 rounded-full font-medium flex items-center justify-center hover:bg-studio-ink hover:text-white transition-all duration-300">
+              <a href="#contact" className="btn-secondary flex items-center justify-center">
                 Contact Us
               </a>
             </div>
@@ -114,7 +114,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.2 }}
             className="relative hidden lg:block"
           >
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-700">
+            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700">
               <img 
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" 
                 alt="Web Design Studio"
@@ -126,15 +126,15 @@ export default function Home() {
             <motion.div 
               animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-12 -right-12 w-48 h-48 border-2 border-studio-gold/30 rounded-full -z-10"
+              className="absolute -top-12 -right-12 w-48 h-48 border-2 border-brand-primary/30 rounded-full -z-10"
             />
             <motion.div 
               animate={{ x: [0, 20, 0], scale: [1, 1.1, 1] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-12 -left-12 w-32 h-32 bg-studio-gold/10 rounded-2xl -z-10 blur-sm"
+              className="absolute -bottom-12 -left-12 w-32 h-32 bg-brand-primary/10 rounded-2xl -z-10 blur-sm"
             />
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-studio-gold/10 rounded-full blur-3xl -z-10"></div>
-            <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-studio-ink/5 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute -top-10 -right-10 w-64 h-64 bg-brand-primary/10 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-brand-secondary/5 rounded-full blur-3xl -z-10"></div>
           </motion.div>
         </div>
       </section>
@@ -145,8 +145,8 @@ export default function Home() {
           <Reveal width="100%">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
               <div>
-                <span className="text-studio-gold font-medium uppercase tracking-widest text-xs mb-4 block">Our Portfolio</span>
-                <h2 className="text-4xl md:text-5xl font-serif text-studio-ink dark:text-white">Selected Work</h2>
+                <span className="text-brand-primary font-semibold uppercase tracking-widest text-xs mb-4 block">Our Portfolio</span>
+                <h2 className="text-4xl md:text-5xl font-display text-studio-ink dark:text-white">Selected Work</h2>
               </div>
               <p className="text-studio-ink/60 dark:text-white/60 max-w-md">
                 A collection of digital experiences we've crafted for businesses that care about their brand.
@@ -169,23 +169,23 @@ export default function Home() {
                     <img 
                       src={project.image} 
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-studio-ink/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="bg-white text-studio-ink px-6 py-2 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="absolute inset-0 bg-brand-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="bg-white text-brand-primary px-6 py-2 rounded-full font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                         View Project
                       </span>
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2 mb-3">
                     {project.tags.map(tag => (
-                      <span key={tag} className="text-[10px] uppercase tracking-wider font-bold text-studio-gold px-2 py-1 bg-studio-gold/5 rounded border border-studio-gold/10">
+                      <span key={tag} className="text-[10px] uppercase tracking-wider font-bold text-brand-primary px-2 py-1 bg-brand-primary/5 rounded border border-brand-primary/10">
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <h3 className="text-2xl font-serif mb-2 group-hover:text-studio-gold transition-colors dark:text-white">{project.title}</h3>
+                  <h3 className="text-2xl font-display mb-2 group-hover:text-brand-primary transition-colors dark:text-white">{project.title}</h3>
                   <p className="text-studio-ink/60 dark:text-white/60 text-sm leading-relaxed">{project.description}</p>
                 </Link>
               </motion.div>
@@ -199,8 +199,8 @@ export default function Home() {
         <div className="container-custom">
           <Reveal width="100%">
             <div className="text-center max-w-2xl mx-auto mb-20">
-              <span className="text-studio-gold font-medium uppercase tracking-widest text-xs mb-4 block">Services</span>
-              <h2 className="text-4xl md:text-5xl font-serif mb-6 dark:text-white">What We Offer</h2>
+              <span className="text-brand-primary font-semibold uppercase tracking-widest text-xs mb-4 block">Services</span>
+              <h2 className="text-4xl md:text-5xl font-display mb-6 dark:text-white">What We Offer</h2>
               <p className="text-studio-ink/60 dark:text-white/60">
                 We provide comprehensive digital solutions to help your business thrive in the modern landscape.
               </p>
@@ -215,12 +215,12 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-white dark:bg-dark-surface p-10 rounded-3xl shadow-sm transition-all duration-300 border border-studio-ink/5 dark:border-white/5"
+                className="bg-white dark:bg-dark-surface p-10 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-studio-ink/5 dark:border-white/5 group"
               >
-                <div className="w-14 h-14 bg-studio-gold/10 rounded-2xl flex items-center justify-center mb-8 text-studio-gold">
+                <div className="w-14 h-14 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-8 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
                   <service.icon size={28} />
                 </div>
-                <h3 className="text-2xl font-serif mb-4 dark:text-white">{service.title}</h3>
+                <h3 className="text-2xl font-display mb-4 dark:text-white">{service.title}</h3>
                 <p className="text-studio-ink/60 dark:text-white/60 leading-relaxed">{service.description}</p>
               </motion.div>
             ))}
@@ -229,12 +229,12 @@ export default function Home() {
       </section>
 
       {/* Process Section */}
-      <section className="section-padding bg-studio-ink text-white dark:bg-studio-gold dark:text-studio-ink">
+      <section className="section-padding bg-studio-ink text-white dark:bg-dark-surface">
         <div className="container-custom">
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <span className="text-studio-gold font-medium uppercase tracking-widest text-xs mb-4 block dark:text-studio-ink/60">Our Method</span>
-            <h2 className="text-4xl md:text-5xl font-serif mb-6">How We Work</h2>
-            <p className="text-white/60 dark:text-studio-ink/60">
+            <span className="text-brand-primary font-semibold uppercase tracking-widest text-xs mb-4 block">Our Method</span>
+            <h2 className="text-4xl md:text-5xl font-display mb-6">How We Work</h2>
+            <p className="text-white/60">
               A streamlined, collaborative process designed to deliver exceptional results every time.
             </p>
           </div>
@@ -247,13 +247,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="relative"
+                className="relative group"
               >
-                <div className="text-6xl font-serif font-bold text-white/5 mb-6 dark:text-studio-ink/5">{item.step}</div>
-                <h3 className="text-xl font-serif mb-4 text-studio-gold dark:text-studio-ink">{item.title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed dark:text-studio-ink/50">{item.description}</p>
+                <div className="text-6xl font-display font-black text-white/5 mb-6 group-hover:text-brand-primary/10 transition-colors duration-300">{item.step}</div>
+                <h3 className="text-xl font-display font-bold mb-4 text-brand-primary">{item.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{item.description}</p>
                 {idx < process.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-6 w-12 h-px bg-white/10 dark:bg-studio-ink/10"></div>
+                  <div className="hidden md:block absolute top-1/2 -right-6 w-12 h-px bg-white/10"></div>
                 )}
               </motion.div>
             ))}
@@ -262,7 +262,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-studio-ink relative overflow-hidden dark:bg-dark-surface">
+      <section className="section-padding bg-brand-primary relative overflow-hidden">
         <div className="container-custom relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -270,16 +270,16 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-6xl font-serif text-white mb-10 leading-tight">
-              Ready to <span className="text-studio-gold italic">elevate</span> your business online?
+            <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-10 leading-tight">
+              Ready to <span className="text-white/60 italic">elevate</span> your business online?
             </h2>
-            <button className="bg-studio-gold text-studio-ink px-12 py-5 rounded-full font-bold text-lg hover:bg-white transition-all duration-300 shadow-xl shadow-studio-gold/20">
+            <button className="px-12 py-5 bg-white text-brand-primary rounded-2xl font-bold text-lg hover:bg-brand-secondary hover:text-white transition-all duration-300 shadow-2xl shadow-black/20">
               Start Your Project
             </button>
           </motion.div>
         </div>
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-studio-gold rounded-full blur-[120px]"></div>
+        <div className="absolute top-0 left-0 w-full h-full opacity-20">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white rounded-full blur-[120px]"></div>
         </div>
       </section>
 
@@ -288,32 +288,32 @@ export default function Home() {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
-              <span className="text-studio-gold font-medium uppercase tracking-widest text-xs mb-4 block">Get in Touch</span>
-              <h2 className="text-4xl md:text-5xl font-serif mb-8 dark:text-white">Let's build something great together.</h2>
+              <span className="text-brand-primary font-semibold uppercase tracking-widest text-xs mb-4 block">Get in Touch</span>
+              <h2 className="text-4xl md:text-5xl font-display mb-8 dark:text-white">Let's build something great together.</h2>
               <p className="text-studio-ink/60 dark:text-white/60 text-lg mb-12 leading-relaxed">
                 Have a project in mind? We'd love to hear about it. Send us a message and we'll get back to you within 24 hours.
               </p>
 
               <div className="space-y-8">
                 <div className="flex items-center space-x-6 group">
-                  <div className="w-12 h-12 bg-studio-bg dark:bg-dark-surface rounded-full flex items-center justify-center text-studio-ink dark:text-white group-hover:bg-studio-gold transition-colors">
+                  <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors">
                     <Mail size={20} />
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-widest text-studio-ink/40 dark:text-white/40 font-bold mb-1">Email Us</p>
-                    <p className="text-lg font-medium dark:text-white">hello@lumina.studio</p>
+                    <p className="text-lg font-semibold dark:text-white">hello@lumina.studio</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-6 group">
-                  <div className="w-12 h-12 bg-studio-bg dark:bg-dark-surface rounded-full flex items-center justify-center text-studio-ink dark:text-white group-hover:bg-studio-gold transition-colors">
+                  <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors">
                     <Phone size={20} />
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-widest text-studio-ink/40 dark:text-white/40 font-bold mb-1">Call Us</p>
-                    <p className="text-lg font-medium dark:text-white">+1 (555) 123-4567</p>
+                    <p className="text-lg font-semibold dark:text-white">+1 (555) 123-4567</p>
                   </div>
                 </div>
-                <button className="flex items-center space-x-4 bg-emerald-500 text-white px-8 py-4 rounded-2xl hover:bg-emerald-600 transition-colors w-full sm:w-auto justify-center">
+                <button className="flex items-center space-x-4 bg-emerald-500 text-white px-8 py-4 rounded-2xl hover:bg-emerald-600 transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-emerald-500/20 w-full sm:w-auto justify-center">
                   <MessageSquare size={20} />
                   <span className="font-bold">Chat on WhatsApp</span>
                 </button>
@@ -346,7 +346,7 @@ export default function Home() {
                   <label className="text-xs uppercase tracking-widest font-bold text-studio-ink/60 dark:text-white/60">Message</label>
                   <textarea rows={4} className="w-full bg-white dark:bg-dark-bg dark:text-white border border-studio-ink/10 dark:border-white/10 px-4 py-3 rounded-xl focus:outline-none focus:border-studio-gold transition-colors" placeholder="Tell us about your project..."></textarea>
                 </div>
-                <button className="w-full bg-studio-ink dark:bg-studio-gold dark:text-studio-ink text-white py-5 rounded-xl font-bold hover:bg-studio-gold dark:hover:bg-white transition-all duration-300">
+                <button className="w-full bg-brand-primary text-white py-5 rounded-xl font-bold hover:bg-brand-secondary transition-all duration-300 shadow-lg shadow-brand-primary/20">
                   Send Message
                 </button>
               </form>

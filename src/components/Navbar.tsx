@@ -45,10 +45,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 glass border-b border-studio-ink/5">
+    <nav className="fixed top-0 left-0 w-full z-50 glass border-b border-studio-ink/5 dark:border-white/5">
       <div className="container-custom h-20 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-serif font-bold tracking-tight text-studio-ink dark:text-white">
-          Lumina<span className="text-studio-gold">.</span>
+        <Link to="/" className="text-2xl font-display font-bold tracking-tight text-studio-ink dark:text-white">
+          Lumina<span className="text-brand-primary">.</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -58,7 +58,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-sm font-medium hover:text-studio-gold transition-colors duration-200 dark:text-white/80"
+                className="text-sm font-medium hover:text-brand-primary transition-colors duration-200 dark:text-white/80"
               >
                 {link.name}
               </Link>
@@ -67,7 +67,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleScroll(e, link.href)}
-                className="text-sm font-medium hover:text-studio-gold transition-colors duration-200 dark:text-white/80"
+                className="text-sm font-medium hover:text-brand-primary transition-colors duration-200 dark:text-white/80"
               >
                 {link.name}
               </a>
@@ -81,7 +81,7 @@ export default function Navbar() {
             {isDark ? <Sun size={20} /> : <Moon size={20} />}
           </button>
 
-          <button className="bg-studio-ink text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-studio-gold transition-all duration-300 shadow-lg shadow-studio-ink/10 dark:bg-studio-gold dark:text-studio-ink dark:hover:bg-white">
+          <button className="bg-brand-primary text-white px-6 py-2.5 rounded-xl text-sm font-semibold hover:bg-brand-secondary transition-all duration-300 shadow-lg shadow-brand-primary/20">
             Start a Project
           </button>
         </div>
@@ -119,7 +119,7 @@ export default function Navbar() {
                     key={link.name}
                     to={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-lg font-medium hover:text-studio-gold dark:text-white"
+                    className="text-lg font-medium hover:text-brand-primary dark:text-white"
                   >
                     {link.name}
                   </Link>
@@ -128,13 +128,13 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     onClick={(e) => handleScroll(e, link.href)}
-                    className="text-lg font-medium hover:text-studio-gold dark:text-white"
+                    className="text-lg font-medium hover:text-brand-primary dark:text-white"
                   >
                     {link.name}
                   </a>
                 )
               ))}
-              <button className="bg-studio-ink text-white w-full py-4 rounded-xl text-lg font-medium hover:bg-studio-gold transition-colors dark:bg-studio-gold dark:text-studio-ink">
+              <button className="bg-brand-primary text-white w-full py-4 rounded-xl text-lg font-semibold hover:bg-brand-secondary transition-colors">
                 Start a Project
               </button>
             </div>

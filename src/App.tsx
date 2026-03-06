@@ -7,7 +7,6 @@ import Home from './pages/Home';
 import ProjectDetail from './pages/ProjectDetail';
 import Services from './pages/Services';
 import Chatbot from './components/Chatbot';
-import CustomCursor from './components/CustomCursor';
 import BackToTop from './components/BackToTop';
 
 function ScrollProgress() {
@@ -20,7 +19,7 @@ function ScrollProgress() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-studio-gold z-[60] origin-left"
+      className="fixed top-0 left-0 right-0 h-1 bg-brand-primary z-[60] origin-left"
       style={{ scaleX }}
     />
   );
@@ -51,7 +50,6 @@ export default function App() {
     <Router>
       <ScrollProgress />
       <ScrollToTop />
-      <CustomCursor />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <div className="flex-grow">
